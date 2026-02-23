@@ -14,7 +14,7 @@ def startcamera():
     cap = cv2.VideoCapture(0)
     
     if not cap.isOpened():
-        label.config(text="Camera nahi khul rahi")
+        label.config(text="Camera is note open")
         return
     if canvas is None:
         canvas = tk.Canvas(root,width=640,height=480,bg="black")
@@ -49,7 +49,7 @@ def camera():
         cap.release()
         cv2.destroyAllWindows()
         cap = None
-        label.config(text="Direction:Camera band")
+        label.config(text="Direction:Camera off")
         return
 root = tk.Tk()
 root.title("Face Direction Detection")
@@ -60,5 +60,6 @@ label.pack()
 start_btn = tk.Button(root,text="Start Camera",command=startcamera)
 start_btn.pack()
 root.mainloop()
+
 
 
